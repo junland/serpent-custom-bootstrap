@@ -36,6 +36,6 @@ RUN curl https://raw.githubusercontent.com/junland/serpent-custom-bootstrap/main
 
 USER builder
 
-RUN cd stage1 && ./stage1.sh
+RUN cd stage1 && sed '4 i set +h' *.sh && ./stage1.sh
 
-RUN cd stage2 && ./stage2.sh
+RUN cd stage2 && sed '4 i set +h' *.sh && ./stage2.sh
